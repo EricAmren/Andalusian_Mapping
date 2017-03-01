@@ -41,7 +41,9 @@ Here are some advantages of **Andalousian-Mapping** that may match your needs:
 
 ##Usage
 Run a simple stereotyped command line: 
-`code(bash andalousian-map_Portable.sh Config-file_mysample.txt)`
+
+`bash andalousian-map_Portable.sh Config-file_mysample.txt`
+
 For each new analysis, you only change the configuration file (Config-file_mysample.txt), which is a simple texte file.
 
 ##How to adapt it to my purpose ?
