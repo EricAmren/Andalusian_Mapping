@@ -1,0 +1,112 @@
+#########Configuration file for andalousian-map_Portable.sh for sample XXXX
+
+### Fields to replace:
+### XXXX are likely changed for each new analysis by relevant parameters (do a CTRL+F with XXXX to catch them all). 
+### NNNN will likely be re-used for all analysis with same computer/ set-up / background strain / mapping strain (do a CTRL+F with NNNN to catch them all). 
+### Note: All paths should be ABSOLUTE paths
+
+###Analysis XXXX (e.g. date, run ID,...)
+##Run on NNNN (e.g. Server)
+
+##Sample XXXX (other info: allele XXXX, strain XXXX):
+#XXXX -> Examples of other info:
+#Mapping F2 populations (26 F2 lines) 
+#Sequencing on Hiseq by "Company", May 2016.
+#2 runs of sequencing data:
+#Run1: 6,282,790 paired-ends, 100 bp.
+#Run2: 6,672,907 paired-ends, 100 bp.
+#Raw reads, FastQC OK. 
+
+########################
+## Your setup config  ##
+########################
+#Path to the andalousian-mapping folder (do not end with a /):
+ANDALOUSIAN_FOLDER=NNNN/path/to/andalousian-mapping
+
+#Path to the programs used (Version software= June 2016)
+#GATK (version: 3.7+). The variable $GATKHOME should point to the folder GATK/3.6/ that contain the exec 'GenomeAnalysisTK.jar' (invoked in each GATK command lines).(do not end with a /).
+GATKHOME=NNNN/path/to/GATK/3.6
+#picard (Version: 2.3.0+). The variable $PICARD should point to the exec file picard.jar
+PICARD=NNNN/path/to/PICARD/picard.jar 
+#snpEff (4.1+). The variable $snpEff should point to the snpEff folder. (In particular, check the presence of /scripts/vcfEffOnePerLine.pl and SnpSift.jar)(do not end with a /)
+snpEff=NNNN/path/to/snpEff
+#If you are working with an organism (or assembly) which is not in a pre-built database released with snpEff:
+#		#1/ Build the database according to http://snpeff.sourceforge.net/SnpEff_manual.html#databases +
+#		#2/ Store this database in andalousian-mapping/data/snpEff-Databases in a dedicated folder with the same name + 
+#		#3/ Place the corresponding genome.fa file (with the same name) in andalousian-mapping/data/snpEff-Databases/genomes the "genomes" folder +
+#		#4/ Add the database entry to snpEff_andalousian.config
+snpEff_config=NNNN/path/to/snpEff_andalousian.config
+#If you are using a pre-built database, use original config file = NNNN/path/to/snpEff/snpEff.config. If not already downloaded, the pre-built database will be automatically downloaded and installed at the right place in the snpEff folder.
+#snpEff database ID (as written the snpEff.config or snpEff_andalousian.config file) :
+snpEff_database=NNNN (e.g. O.tipulae.2.0)
+
+#Memory of the java programs (-Xmx${RAM}g option)
+RAM=12 
+
+########################
+##    Your Inputs     ##
+########################
+#Reference genome
+REFERENCE=NNNN/path/to/ReferenceGenome/reference.fa
+#This folder should contain all indices required for bwa read-mapping. Do not use the same folder as snpEff/data/genomes (in fact, not tested)
+#Note: the original "andalousian-mapping" folder contains Oscheius tipulae assembly nOt.2.0 in andalousian-mapping/Portable/data/Reference_genomes/Otipulae/nOt.2.0. We recommand to delete it to save space if you have another version elsewhere in your system.
+
+#Sequencing Reads 
+#Note: for O.tipulae, a sample of paired-end reads is available in Path/to/andalousian-mapping/Portable/data/sample to test the scripts
+ 
+#if several Runs:
+NbRUNS=XXXX (integer, e.g. 2)
+
+declare -A READS #READS will be an array
+READS[1]=XXXX/path/to/SAMPLEXXXX_1.fq.gz
+READS[2]=XXXX/path/to/SAMPLEXXXX_2.fq.gz
+READS[3]=XXXX/path/to/SAMPLEXXXX_RUN2_1.fq.gz
+READS[4]=XXXX/path/to/SAMPLEXXXX_RUN2_2.fq.gz
+#Put as many (pair of) sequencing runs corresponding to the same sample by continuing READS[5], READS[6]; etc....
+
+#For RG spec, read: http://gatkforums.broadinstitute.org/gatk/discussion/6472/read-groups
+#BGI fq names are buit as follows: {FlowCellID}-{sampleID}_Lane(=Lx)_Pair(=1/2).fq.gz
+RGPL=XXXX (Plateform, e.g. ILLUMINA)
+RGSM=XXXX (Sample, e.g. mf76)
+RGLB=XXXX (Library, e.g. mf76_LB1)
+declare -A RGID
+declare -A RGPU
+RGID[1]=XXXX (e.g. FCH7TC7BBXX_mf55) #Choose 'Flow Cell ID'_'sample'
+RGPU[1]=XXXX (e.g. FCH7TC7BBXX_L7_mf55) #Choose 'Flow Cell ID'_'Lane'_'sample'
+RGID[2]=XXXX (e.g. FCH7NLVBBXX_mf55)
+RGPU[2]=XXXX (e.g. FCH7NLVBBXX_L8_mf55)
+
+#DATA required for mapping by sequencing:
+#All this file should be stored in NNNN/path/to/Andalousian-mapping/data/
+#a dbSNP of the mapping strain
+#dbSNP=NNNN
+dbSNP=dbSNP_JU170_v2.0.vcf 
+#List of scaffolds ID and their size:
+#Scaff_size=NNNN
+Scaff_size=nOt.2.0_Scaff-size.tsv #NNNN
+#"Invariant" Scaffolds 
+#Invariant_Scaff=NNNN
+Invariant_Scaff=JU170_InvariantScaffold.interval_list #NNNN
+#Warning Scaffolds: list of scaffolds you want to test even if they are not linked to your mutation. (e.g. False-positive or so-far-unlinked scaffolds)
+#Warning_Scaff=NNNN
+Warning_Scaff=JU170_FalsePositiveScaffold.list
+#Control gVCFs:
+#Background_gVCF=NNNN
+Background_gVCF=CEW1.gVCF.vcf #NNNN
+#Mapping_gVCF=NNNN
+Mapping_gVCF=JU170.gVCF.vcf #NNNN
+#Background strain ID. It should be the same as RGSM appearing in the $Background_gVCF (determine with "Read Group" information during analysis)
+#Background_strain=NNNN
+Background_strain=CEW1
+#Mapping strain ID. It should be the same as RGSM appearing in the $Mapping_gVCF (determine with "Read Group" information during analysis)
+#Mapping_strain=NNNN
+Mapping_strain=JU170
+
+##Your Outputs
+OUTPUT_NAME=XXXX (e.g. mf76)
+#Advice: put the same as RGSM
+
+##Screen preferences
+#Color of the messages indicating script progression
+col='\e[1;32m'
+NC='\e[0m'

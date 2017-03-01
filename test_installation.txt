@@ -1,0 +1,21 @@
+#Test andalousian-map_Portable.sh on my Linux PC
+
+#2017-03-01
+#Softwares
+# bwa version: Version: 0.7.12-r1039
+# samtools: Version: 0.1.19-96b5f2294a
+# Picard Version: 1.110+. Tested version (June 2016)= 2.3.0
+# GATK version: 3.7.
+# R version 3.3.2
+# Snpeff version: 4.3i (2016-12-15)
+# snpEff.config: in /home/fabfab/softwares/andalousian-mapping/Portable/data/snpEff-Databases/snpEff_andalousian.config
+
+#Data:
+sub-sample mf76 available in andalousian-mapping/Portable/data/sample
+
+#Works well after a few debug
+#->GATK version 3.7
+#->snpEff 4.3 woth the same database.
+
+
+
