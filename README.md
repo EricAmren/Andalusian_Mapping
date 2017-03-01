@@ -35,7 +35,7 @@ Here are some advantages of **Andalousian-Mapping** that may match your needs:
 * [samtools](http://samtools.sourceforge.net/) version 0.1.18  or later
 * [Picard](https://broadinstitute.github.io/picard/) Version 1.110  or later
 * [GATK](https://software.broadinstitute.org/gatk/) Version 3.7  or later
-* [R](https://www.r-project.org/) Version 3.3  or later
+* [R](https://www.r-project.org/) Version 3.3  or later, with ggplot2 package.
 * [snpEff](http://snpeff.sourceforge.net/) Version 4.1g or later
 
 ##Data
