@@ -3,8 +3,8 @@ Pipeline to perform in a single step mapping-by-sequencing and mutation identifi
 
 ##General description
 This pipeline has been originally developped for the nematode species *Oscheius tipulae* by the [Félix lab](http://www.ibens.ens.fr/?rubrique29).
-This repository contains all data to perform mapping-by-sequencing with Oscheius tipulae using the reference strain CEW1 and the mapping strain JU170 (see Félix Lab [Strain database](http://www.justbio.com/worms/index.php).
-However, this is a versatile pipeline that allows working with any species and any mapping strains (See "How to adapt it to my purpose ?" 
+This repository contains all data to perform mapping-by-sequencing with Oscheius tipulae using the reference strain CEW1 and the mapping strain JU170 (see Félix Lab [Strain database](http://www.justbio.com/worms/index.php)).
+However, this is a versatile pipeline that allows working with any species and any mapping strains (See "How to adapt it to my purpose ?"). 
 
 **Andalousian_Mapping** is mainly encoded in bash and it can be run on Linux (tested on Ubuntu 16.04 LTS) and MacOS (not Windows). It uses popular third-party NGS softwares (six exactly, see "Requirements") that must be installed in the computing machine.
 
