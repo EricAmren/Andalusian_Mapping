@@ -40,13 +40,18 @@ Here are some advantages of **Andalousian-Mapping** that may match your needs:
 * [snpEff](http://snpeff.sourceforge.net/). Version 4.1g or later
 
 ##Usage
-Run a simple stereotyped command line: 
+Run a simple and stereotyped command line: 
 ```
-bash andalousian-map_Portable.sh Config-file_mysample.txt
+bash (/path/to/)andalousian-map_Portable.sh (/path/to/)Config-file_mysample.txt
 ```
-For each new analysis, you only change the configuration file (Config-file_mysample.txt), which is a simple texte file.
+[andalousian-map_Portable.sh](/scripts/andalousian-map_Portable.sh) is a bash script (no need to edit).
+
+For each new analysis, you only change the **configuration file** (Config-file_mysample.txt above), which is a simple text file. It only contains paths to data or scripts and the name (prefix) you want to give to your output files 
+
+A [template](/Config-file_Portable_TEMPLATE.txt) and an [example](/Config-file_Portable_MyLinux.txt) configuration files are available to explain how 
 
 ##How to adapt it to my purpose ?
+This repository contain all data to perform mapping-by-sequencing/mutant-identification in Oscheius tipulae with the two strains CEW1 and JU170.
 
 ###Notes:
 We named our pipeline "Andalousian_Mapping" in reference to the "Hawaïan Mapping" procedure developped in C.elegans, involving the Hawaïan mapping strain CB4856. Our Oscheius tipuale mapping strain is a wild isolate sampled in Sevilla, Andalousia.
