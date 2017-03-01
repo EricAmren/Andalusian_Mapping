@@ -35,8 +35,8 @@ Here are some advantages of **Andalousian-Mapping** that may match your needs:
 * [samtools](http://samtools.sourceforge.net/) version 0.1.18  or later
 * [Picard](https://broadinstitute.github.io/picard/) Version 1.110  or later
 * [GATK](https://software.broadinstitute.org/gatk/) Version 3.7  or later
-* [R](https://www.r-project.org/). Version 3.3  or later
-* [snpEff](http://snpeff.sourceforge.net/). Version 4.1g or later
+* [R](https://www.r-project.org/) Version 3.3  or later
+* [snpEff](http://snpeff.sourceforge.net/) Version 4.1g or later
 
 ##Data
 * Paired-end sequencing data of a bulk F2 mapping population. 
@@ -56,9 +56,12 @@ For each new analysis, you only change the **configuration file** (`Config-file_
 A [template](/Config-file_Portable_TEMPLATE.txt) and an [example](/Config-file_Portable_MyLinux.txt) configuration files are available to explain how 
 
 ###Advanced
+Plots and filtering steps can be run separately with the two scripts [map_mutant_Portable.sh](/scripts/map_mutant_Portable.sh) and [find_gene_Portable.sh](/scripts/find_gene_Portable.sh).
 
 ##How to adapt it to my own purpose ?
-This repository contain all data to perform mapping-by-sequencing/mutant-identification in Oscheius tipulae with the two strains CEW1 and JU170.
+This repository contain all data to perform mapping-by-sequencing/mutant-identification in *Oscheius tipulae* with the two strains CEW1 and JU170.
+
+If you want to use this pipeline with another organism, you first need a reference genome (a draft, fragmented assembly should work). Then you need to sequence the backgroud strain and the mapping strain and perform a variant calling to define a list of mapping SNPs.
 
 ##Notes:
 We named our pipeline "Andalousian_Mapping" in reference to the "Hawaïan Mapping" procedure developped in *C. elegans*, involving the Hawaïan mapping strain CB4856. Our *O. tipuale* mapping strain is a wild isolate sampled in Sevilla, Andalousia.
