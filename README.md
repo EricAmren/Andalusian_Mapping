@@ -17,18 +17,18 @@ However, all genomes are not available in Galaxy. We had to develop Anadalousian
 We propose that **Andalousian-Mapping** will be an attractive alternative to other pipelines for people who need to work with non-reference genome assembly but with minimal efforts in computing/bio-informatics. Once the set-up is done, the procedure is really simple: one command line only.
 
 Here are some advantages of **Andalousian-Mapping** that may match your needs:
--Most third-party software easy to install and so popular that they might already be on your system (e.g. R, bwa, samtools) ;
--The most complicated software to install are GATK and snpEff but they both have very clear tutorials and debug forum online. If it remains a problem for you, any people with intermediate computing skills should easily and quickly debug this step for you ;
--Once the set-up is done, the procedure is really simple: one command line only ;
--You can run it locally and don't need to queue your job in a distant server ;
--You can adapt it to any reference genomes. Hence, you can study non-model organisms or use an alternative assembly of a model-organism (different strain depedning on the design of your mapping cross).
--You manage the versions of your software: you can either benefit from the latest improvements of third-party software or freeze you set-up in the configuration you prefer.
+- Most third-party software easy to install and so popular that they might already be on your system (e.g. R, bwa, samtools) ;
+- The most complicated software to install are GATK and snpEff but they both have very clear tutorials and debug forum online. If it remains a problem for you, any people with intermediate computing skills should easily and quickly debug this step for you ;
+- Once the set-up is done, the procedure is really simple: one command line only ;
+- You can run it locally and don't need to queue your job in a distant server ;
+- You can adapt it to any reference genomes. Hence, you can study non-model organisms or use an alternative assembly of a model-organism (different strain depedning on the design of your mapping cross).
+- You manage the versions of your software: you can either benefit from the latest improvements of third-party software or freeze you set-up in the configuration you prefer.
 
 ##What it does:
 **Andalousian-Mapping** takes as input paired-end reads from a bulk sequencing of a F2 population generated through a cross of a (ideally recessive) mutant strain with a mapping strain.
--> It outputs plots of allele frequency (mutant strain allele / mapping-strain allele) for each scaffolds/Chromosome present in the reference genome. This allows to visualy map the region linked to the mutation selected in the F2 population.
--> It outputs an annotated vcf file containing the mutations linked to the phenotype-causing mutations with their functional impacts
--> It outputs a text file that select the best candidate mutations based on the predicted functional impact.
+- It outputs **plots of allele frequency** (mutant strain allele / mapping-strain allele) for each scaffolds/Chromosome present in the reference genome. This allows to visualy map the region linked to the mutation selected in the F2 population.
+- It outputs an **annotated vcf file** containing the mutations linked to the phenotype-causing mutations with their **functional impacts**
+- It outputs a text file that **select the best candidate mutations** based on the predicted functional impact.
 
 ##Requirements
 ###Software
@@ -41,9 +41,9 @@ Here are some advantages of **Andalousian-Mapping** that may match your needs:
 
 ##Usage
 Run a simple stereotyped command line: 
-
-`bash andalousian-map_Portable.sh Config-file_mysample.txt`
-
+```
+bash andalousian-map_Portable.sh Config-file_mysample.txt
+```
 For each new analysis, you only change the configuration file (Config-file_mysample.txt), which is a simple texte file.
 
 ##How to adapt it to my purpose ?
