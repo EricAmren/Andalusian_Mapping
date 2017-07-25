@@ -11,7 +11,7 @@ Many bio-informatic steps are needed from the raw sequencing data to the final i
 
 ## Why using **Andalusian_Mapping** ?
 Recently, [Cloudmap](https://usegalaxy.org/u/gm2123/p/cloudmap), a nice automatic pipeline of mapping-by-sequencing/mutant-identification has been developped and integrated to Galaxy, with an intuitive and user-friendly GUI. It works very well with model species like *Caenorhabditis elegans* or *Arabidopsis thaliana*.
-However, all genomes are not available in Galaxy. We had to develop Anadalousian-Mapping to work with the non-model species *Oscheius tipulae*, which had no published genome. But we tried to keep simple procedures so that a large audiance of biologists (and not only bio-informaticians) could find it useful. 
+However, all genomes are not available in Galaxy. We had to develop Anadalousian-Mapping to work with the non-model species *Oscheius tipulae*, which had no published genome. But we tried to keep simple procedures so that a large audience of biologists (and not only bio-informaticians) could find it useful. 
 
 We propose that **Andalusian-Mapping** will be an attractive alternative to other pipelines for people who need to work with non-reference genome assembly but with minimal efforts in computing/bio-informatics. Once the set-up is done, the procedure is really simple: one command line only.
 
@@ -47,9 +47,10 @@ Here are some advantages of **Andalusian-Mapping** that may match your needs:
 ### basics
 Run a simple and stereotyped command line: 
 
-````
+```
 bash (/path/to/)andalousian-map_Portable.sh (/path/to/)Config-file_mysample.txt
 ```
+
 [andalousian-map_Portable.sh](/scripts/andalousian-map_Portable.sh) is a bash script (no need to edit).
 
 For each new analysis, you only change the **configuration file** (`Config-file_mysample.txt` above), which is a simple text file. It only contains paths to data or scripts and the name (prefix) you want to give to your output files 
