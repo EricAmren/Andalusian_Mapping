@@ -66,4 +66,4 @@ This repository contain all data to perform mapping-by-sequencing/mutant-identif
 If you want to use this pipeline with another organism, you first need a reference genome (a draft, fragmented assembly should work). Then you need to sequence the backgroud strain and the mapping strain and perform a variant calling to define a list of mapping SNPs.
 
 ## Notes:
-We named our pipeline "Andalusian_Mapping" in reference to the "Hawaïan Mapping" procedure developped in *C. elegans*, involving the Hawaïan mapping strain CB4856. Our *O. tipuale* mapping strain is a wild isolate sampled in Sevilla, Andalusia.
+We named our pipeline "Andalusian_Mapping" in reference to the "Hawaïan Mapping" procedure developped in *C. elegans*, involving the Hawaïan mapping strain CB4856. Our *O. tipuale* mapping strain is an Andalusian wild isolate sampled in Sevilla, Spain (see the [Félix lab](http://www.ibens.ens.fr/?rubrique29)).
