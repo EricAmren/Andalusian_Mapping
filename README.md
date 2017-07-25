@@ -53,12 +53,12 @@ bash (/path/to/)andalousian-map_Portable.sh (/path/to/)Config-file_mysample.txt
 
 [andalousian-map_Portable.sh](/scripts/andalousian-map_Portable.sh) is a bash script (no need to edit).
 
-For each new analysis, you only change the **configuration file** (`Config-file_mysample.txt` above), which is a simple text file. It only contains paths to data or scripts and the name (prefix) you want to give to your output files 
+For each new analysis, you only change the **configuration file** (see [Config-file_mysample.txt](/Config-file_Portable_TEMPLATE.txt) above), which is a simple text file. It only contains paths to data or scripts and the name (prefix) you want to give to your output files 
 
-A [template](/Config-file_Portable_TEMPLATE.txt) and an [example](/Config-file_Portable_MyLinux.txt) configuration files are available. 
+A [template](/Config-file_Portable_TEMPLATE.txt) and an [example](/Config-file_Portable_MyLinux.txt) configuration files are given in this folder. 
 
 ### Advanced
-Plots and filtering steps can be run separately with the two scripts [map_mutant_Portable.sh](/scripts/map_mutant_Portable.sh) and [find_gene_Portable.sh](/scripts/find_gene_Portable.sh).
+Ploting and filtering steps can be run separately with the two scripts [map_mutant_Portable.sh](/scripts/map_mutant_Portable.sh) and [find_gene_Portable.sh](/scripts/find_gene_Portable.sh).
 
 ## How to adapt it to my own purpose ?
 This repository contain all data to perform mapping-by-sequencing/mutant-identification in *Oscheius tipulae* with the two strains CEW1 and JU170.
