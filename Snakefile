@@ -25,6 +25,7 @@ snpEff_contig= PATH + "data/snpEff-Databases/snpEff_andalousian.config"
 
 # Software Path
 picard = "/home/amren/soft/picard.jar"
+picard = "/home/amren/Master1/ProjetS2/Log/picard.jar"
 #GATK = "~/soft/GenomeAnalysisTK-3.7-0-gcfedb67/GenomeAnalysisTK.jar"
 GATK = "/home/amren/soft/GenomeAnalysisTK.jar"
 newGATK = "~/Master1/ProjetS2/Log/gatk-4.0.1.1/gatk"
@@ -135,7 +136,8 @@ rule build_bam_index:
     output:
         readID + ".RG.dedup.SRmerged.bai"
     shell:
-        "java -Xmx{RAM}g -jar {picard} BuildBamIndex INPUT={input}"
+        "java -Xmx{RAM}g -jar {picard} BuildBamIndex \
+        INPUT={input} "
 
 # STEP 5
 
@@ -151,7 +153,9 @@ rule get_basic_stats:
 
 rule creating_interval_table:
     input:
-        bam_file = readID + ".RG.dedup.SRmerged.bam"
+        bam_file = readID + ".RG.dedup.SRmerged.bam",
+        index = readID + ".RG.dedup.SRmerged.bai"
+        # The index is needed to make sure the .bam used is indexed.
     output:
         "metrics/indelrealigner." + readID + ".intervals"
     shell:
